@@ -3,7 +3,7 @@ Automatically moves the mouse to enemies surrounding the player's crosshair. Thi
 
 It uses OpenCV to process screenshots from the browser window in order to find enemy healthbar's. Through the healthbar it can assume where the enemy is located through distance and size manipulation.
 
-After location the enemy, it uses Pyautogui to move the mouse exactly and instantaneously to the enemy, leaving the user with only the task of clicking
+After finding the enemy, it uses Pyautogui to move the mouse exactly and instantaneously to the enemy, leaving the user with only the task of clicking
 
 # V1:
 
