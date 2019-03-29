@@ -45,36 +45,3 @@ def main():
 
 
 main()
-
-
-
-
-
-
-
-
-#450,450
-#225,225
-
-
-    #params = cv2.SimpleBlobDetector_Params()
-    
-    #params.filterByArea = True
-    #params.minArea = 20
-    #params.maxArea = 400
-
-    
-    #detector = cv2.SimpleBlobDetector_create(params)
-
-
-            #kp = detector.detect(img)
-            #for marker in kp:
-            #try:
-                #marker = kp[0]
-                #img = cv2.drawMarker(img, tuple(int(i) for i in marker.pt), color=(0, 0, 255))
-                #pyautogui.moveTo((pyautogui.position().x+marker.pt[0]-225-40), (pyautogui.position().y+marker.pt[1]-225+90))
-                #cv2.imshow('frame',img)
-            #except:
-                #pyautogui.moveTo(pyautogui.position().x, (pyautogui.position().y))
-                #cv2.imshow('frame',img)
-            #time.sleep(0.5)
