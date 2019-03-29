@@ -27,6 +27,6 @@ Issues include:
   
   - False positives such as the blood on the players screen distract the program and need to be fixed
   
-   - CPU power needed reaches 20% on a 3.1GHJz, 4-core processor, so it needs to be optimized for weaker computers
+   - CPU power needed reaches 20% on a 3.1GHz, 4-core processor, so it needs to be optimized for weaker computers
    
    - Program only works for a resolution of 800 x 1200
