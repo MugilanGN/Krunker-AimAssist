@@ -19,15 +19,15 @@ with mss.mss() as sct:
         cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:1]
         for c in cnts:
             x,y,w,h = cv2.boundingRect(c)
-            w= h*8
+            w = h*8
             cen = int((x + x+h)/2)
             cen2 = int(cen+(w/2))
             cv2.rectangle(frame, (x,y), (x+w,y+h), (255,255,0), 2)
             cv2.rectangle(frame, (cen2+20,y+int(h*2/1.001)), (cen+5,y+40), (0,255,0), 2)
-            #pyautogui.moveTo(pyautogui.position().x+cen-225+30, (pyautogui.position().y)+y-225+int(260/h))
+            #pyautogui.moveTo(pyautogui.position().x+cen-225+30, (pyautogui.position().y)+y-225+int(260/h)) For Depth-Y
             pyautogui.moveTo(pyautogui.position().x+cen-225+30, (pyautogui.position().y)+y-225+50)
             #print(str(h)+" "+str(w))
-        cv2.imshow('the damn window',frame)
+        cv2.imshow('Debugger',frame)
         
         k = cv2.waitKey(1) & 0xFF
         if k == ord('q'):
