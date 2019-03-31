@@ -1,7 +1,7 @@
 # Krunker AimAssist
 Automatically moves the mouse to enemies surrounding the player's crosshair. This increases the user's chances of getting a kill and can be considered a hack
 
-It uses OpenCV to process screenshots from the browser window in order to find enemy healthbar's. Through the healthbar it can assume where the enemy is located through distance and size manipulation.
+It uses OpenCV to process screenshots from the browser window in order to find enemy healthbars. Through the healthbar it can assume where the enemy is located through distance and size manipulation.
 
 After finding the enemy, it uses Pyautogui to move the mouse exactly and instantaneously to the enemy, leaving the user with only the task of clicking
 
@@ -11,7 +11,7 @@ Used the enemies username to find their location. Some issues inlcuded the inabi
 
 # V2:
 
-Instead of looking for the usernames, the strategy has shifted to finding the healthbars, due to their consistent width and height for all players, and their scaling effect at distances. This version faces far less detection issues due to the red nature of enemy healthbars, but the green color of teammate healthbar's. Improvements include:
+Instead of looking for the usernames, the strategy has shifted to finding the healthbars, due to their consistent width and height for all players, and their scaling effect at distances. This version faces far less detection issues due to the red nature of enemy healthbars, but the green color of teammate healthbars. Improvements include:
 
   - Teammate detection, therefore it no longer tracks teammates in Deathmatch and Hardpoints
   
