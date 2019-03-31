@@ -1,4 +1,4 @@
-# Krunker-AimAssist
+# Krunker AimAssist
 Automatically moves the mouse to enemies surrounding the player's crosshair. This increases the user's chances of getting a kill and can be considered a hack
 
 It uses OpenCV to process screenshots from the browser window in order to find enemy healthbar's. Through the healthbar it can assume where the enemy is located through distance and size manipulation.
@@ -20,13 +20,4 @@ Instead of looking for the usernames, the strategy has shifted to finding the he
   - Less false positives due to the red hues of the healthbar being very unique to it, compared to the white usernames which would       accidently see lamps and the snow in Subzero
   
   - Depth detection helps increase accuracy as the healthbar scales over distance. There are some intrinsic problems as the healthbar does not follow a constant scale factor, due to the integer property of pixels. This is still a work in progress
-  
-Issues include:
-
-  - Some inaccuracy due to the pixels being integers so no consistent equations can be formed as of yet
-  
-  - False positives such as the blood on the players screen distract the program and need to be fixed
-  
-   - CPU power needed reaches 20% on a 3.1GHz, 4-core processor, so it needs to be optimized for weaker computers
-   
-   - Program only works for a resolution of 800 x 1200
+ 
