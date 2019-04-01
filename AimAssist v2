@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 import mss
 import pyautogui
-import time
 
 
 def scrnshot(monitor):
@@ -54,7 +53,9 @@ def draw_rect(x,y,w,h,cen,frame):
 
             
 def mouse(x,y,cen,h):
+    
     global width, height
+    
     mx = (pyautogui.position().x) + cen - (width/2)
     my = (pyautogui.position().y) + y+(h*2) - (height/2) + 15
 
@@ -62,6 +63,7 @@ def mouse(x,y,cen,h):
 
 
 def cleanup(frame):
+    
     cv2.imshow('the damn window',frame)
         
     k = cv2.waitKey(1) & 0xFF
@@ -71,6 +73,7 @@ def cleanup(frame):
 
     
 def main():
+    
     global width, height
     
     width = 450
@@ -93,4 +96,4 @@ def main():
 
 while True:
     main()
-    
+   
