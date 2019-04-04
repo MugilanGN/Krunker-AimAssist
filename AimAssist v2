@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import mss
 import pyautogui
-
+import time
 
 def scrnshot(monitor):
     
@@ -21,7 +21,7 @@ def find_bar(frame):
          
     mask = cv2.inRange(hsv, lower, upper)
         
-    (cnts, _) = cv2.findContours(mask, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+    (cnts, _) = cv2.findContours(mask, cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:1]
     
     return cnts
@@ -34,7 +34,7 @@ def process(cnts,frame):
         x,y,w,h = cv2.boundingRect(c)
         
         if h<9:
-            w = int(h*8.5)
+            w = int(h*8)
             cen = int((x + x+h)/2)
 
             draw_rect(x,y,w,h,cen,frame)
@@ -56,11 +56,10 @@ def mouse(x,y,cen,h):
     
     global width, height
     
-    mx = (pyautogui.position().x) + cen - (width/2)
-    my = (pyautogui.position().y) + y+(h*2) - (height/2) + 15
+    mx = (pyautogui.position().x) + x - (width/2)
+    my = (pyautogui.position().y) - (height/2) +y + h*2 
 
-    pyautogui.moveTo(mx, my)
-
+    pyautogui.moveTo(mx, my,0)
 
 def cleanup(frame):
     
@@ -73,7 +72,6 @@ def cleanup(frame):
 
     
 def main():
-    
     global width, height
     
     width = 450
@@ -82,7 +80,7 @@ def main():
     monitor = {"top" : 400, "left" : 950, "width" : width, "height" : height}
 
     frame = scrnshot(monitor)
-
+    
     cnts = find_bar(frame)
 
     if len(cnts) > 0:
@@ -94,6 +92,11 @@ def main():
     cleanup(frame)
 
 
+pyautogui.PAUSE = 0.05
 while True:
-    main()
-   
+    fps = 0
+    last_time = time.time()
+    while time.time() - last_time < 1:
+        main()
+        fps += 1
+    print(fps," : Whole Program")
