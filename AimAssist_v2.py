@@ -92,11 +92,12 @@ def main():
     cleanup(frame)
 
 
-pyautogui.PAUSE = 0.05
-while True:
-    fps = 0
-    last_time = time.time()
-    while time.time() - last_time < 1:
-        main()
-        fps += 1
-    print(fps," : Whole Program")
+if(__name__ == '__main__'):
+    pyautogui.PAUSE = 0.05
+    while True:
+        fps = 0
+        last_time = time.time()
+        while time.time() - last_time < 1:
+            main()
+            fps += 1
+        print(fps," : Whole Program")
